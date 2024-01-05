@@ -1,10 +1,6 @@
 import java.awt.image.BufferedImage
 
-/**
- * Source:
- * - https://www.youtube.com/watch?v=Kv1Hiv3ox8I
- * - https://en.wikipedia.org/wiki/JPEG#Encoding
- */
+
 fun main(args: Array<String>) {
     require(args.size == 1) { "Must contain a file name" }
     println("Program arguments: ${args.joinToString()}")
@@ -28,7 +24,7 @@ fun main(args: Array<String>) {
 
     // 5. Quantization
 
-    // 6. Run Length and Huffman Encoding
+    // 6. Entropy coding (run-length and hoffman)
 
     // Debug renderers
     ImageViewer.viewImage("original", image)
