@@ -21,10 +21,9 @@ object ImageViewer {
 
     fun viewRawImage(title: String, rgbImage: List<Byte>, width: Int) {
         try {
-            val rgbImageArray = rgbImage.chunked(width).map { it.toByteArray() }.toTypedArray()
-            val bufferedImage =
-                BufferedImage(rgbImageArray[0].size, rgbImageArray.size, TYPE_INT_RGB)
-            rgbImageArray.forEachIndexed { x, row ->
+            val imageArray = rgbImage.chunked(width).map { it.toByteArray() }.toTypedArray()
+            val bufferedImage = BufferedImage(imageArray[0].size, imageArray.size, TYPE_INT_RGB)
+            imageArray.forEachIndexed { x, row ->
                 row.forEachIndexed { y, col ->
                     val shade = col.toUByte().toInt()
                     bufferedImage.setRGB(y, x, Color(shade, shade, shade).rgb)
